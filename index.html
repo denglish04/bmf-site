@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Occidental's Black Men's Forum</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--ink:#1b1b1b;--muted:#555;--line:#e2e2e2;--bar:#6d6d6d;--bar-ink:#fff;--or:#e07b39;--or-ink:#1b1b1b;--shadow:0 2px 10px rgba(0,0,0,.12);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141414;--card:#1e1e1e;--ink:#f1f1f1;--muted:#b0b0b0;--line:#333;--bar:#3a3a3a;--shadow:0 2px 10px rgba(0,0,0,.5);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141414;--card:#1e1e1e;--ink:#f1f1f1;--muted:#b0b0b0;--line:#333;--bar:#3a3a3a;--shadow:0 2px 10px rgba(0,0,0,.5);color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "Source Serif 4",Georgia,serif}
+h1,h2,h3,.cond{font-family:Oswald,"Arial Narrow",Impact,sans-serif;text-transform:uppercase;margin:0;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mark{font:700 1.7rem Oswald,sans-serif;letter-spacing:.04em;background:linear-gradient(var(--ink) 0 55%,var(--or) 55% 75%,var(--ink) 75%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 2px}
+.logo small{font:500 .62rem Oswald,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.2}
+nav{display:flex;gap:6px;overflow-x:auto;padding:4px 0}
+nav a{font:500 .72rem Oswald,sans-serif;text-transform:uppercase;text-decoration:none;background:var(--bar);color:var(--bar-ink);padding:5px 12px;border-radius:7px;white-space:nowrap}
+nav a:hover{background:var(--or);color:var(--or-ink)}
+.hero{position:relative;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.8)),repeating-linear-gradient(45deg,#2a2a2a 0 18px,#242424 18px 36px);min-height:380px;display:flex;align-items:flex-end}
+.hero .wrap{padding-bottom:40px}
+.hero h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:700;max-width:9ch}
+.hero p{max-width:46ch;margin:14px 0 22px;font-size:1.1rem}
+.pill{display:inline-block;background:var(--or);color:var(--or-ink);font:600 .85rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.04em;padding:10px 26px;border-radius:99px;text-decoration:none;border:0;cursor:pointer;margin:0 8px 8px 0}
+.pill.dark{background:var(--bar);color:#fff}
+.band{background:var(--bar);color:var(--bar-ink);text-align:center;padding:26px 20px}
+.band h2{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:600}
+section{padding:48px 0}
+.panel{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);padding:28px;max-width:760px;margin:0 auto}
+.tab{display:inline-block;background:var(--or);color:var(--or-ink);font:600 .8rem Oswald,sans-serif;text-transform:uppercase;padding:3px 12px;border-radius:4px;margin-bottom:14px}
+.panel p{margin:0 0 14px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);padding:20px}
+.card h3{font-size:1.15rem;margin-bottom:6px}
+.card p{margin:0;color:var(--muted);font-size:.97rem}
+.card .quote{font-style:italic}
+.card .tab{margin-bottom:10px}
+.ph{aspect-ratio:4/3;background:repeating-linear-gradient(135deg,var(--line) 0 10px,transparent 10px 20px);display:grid;place-items:center;color:var(--muted);font:500 .8rem Oswald,sans-serif;text-transform:uppercase;margin-bottom:14px}
+.member{display:flex;gap:16px;align-items:flex-start}
+.av{flex:none;width:72px;height:72px;background:var(--bar);color:#fff;display:grid;place-items:center;font:600 1.4rem Oswald,sans-serif}
+.role{color:var(--or);font:600 .85rem Oswald,sans-serif;text-transform:uppercase}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;justify-content:center}
+.filters button{font:500 .8rem Oswald,sans-serif;text-transform:uppercase;padding:6px 16px;border-radius:99px;border:1.5px solid var(--bar);background:transparent;color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--or);border-color:var(--or);color:var(--or-ink)}
+.events{display:grid;gap:12px;max-width:760px;margin:0 auto}
+.event{display:grid;grid-template-columns:70px 1fr auto;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);padding:14px 18px}
+.date{text-align:center;font:700 2rem Oswald,sans-serif;line-height:1}
+.date small{display:block;font:500 .8rem Oswald,sans-serif;color:var(--or);text-transform:uppercase}
+.event h3{font-size:1.1rem}
+.event p{margin:2px 0 0;color:var(--muted);font-size:.93rem}
+.kind{font:500 .75rem Oswald,sans-serif;text-transform:uppercase;border:1px solid var(--bar);padding:2px 10px;border-radius:99px;white-space:nowrap}
+.alt{background:color-mix(in srgb,var(--bar) 8%,var(--bg))}
+.win{border-left:6px solid var(--or)}
+.news{background:var(--bar);color:#fff;padding:40px 0}
+.news .wrap{display:grid;gap:22px;grid-template-columns:1fr 1fr;align-items:center}
+.news h2{font-size:2rem}
+.news p{margin:8px 0 0;opacity:.9}
+.news form{display:flex;gap:8px;flex-wrap:wrap}
+.news input{flex:1 1 200px;padding:12px;border:0;border-radius:6px;font:inherit;background:#fff;color:#1b1b1b}
+.news .pill{margin:0}
+.msg{flex-basis:100%;min-height:1.4em;font-size:.95rem}
+footer{padding:30px 0 44px;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (max-width:760px){.news .wrap{grid-template-columns:1fr}.event{grid-template-columns:56px 1fr}.event .kind{grid-column:2;justify-self:start}header.top .wrap{flex-wrap:wrap;padding-bottom:6px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top"><span class="mark">BMF</span><small>Occidental<br>College</small></a>
+  <nav aria-label="Sections"><a href="#top">Home</a><a href="#about">About Us</a><a href="#pillars">Pillars</a><a href="#eboard">E-Board</a><a href="#events">Events</a><a href="#alumni">Alumni</a><a href="#wins">Highlights</a><a href="#history">History</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <h1>Occidental's Black Men's Forum</h1>
+  <p>Professional development, technical skill-building, and brotherhood for Black men at Oxy.</p>
+  <a class="pill" href="#about">Learn more</a><a class="pill" href="#events">Events &amp; programs</a>
+</div></div>
+
+<section id="about"><div class="wrap"><div class="panel">
+  <span class="tab">About the Black Men's Forum</span>
+  <p>BMF is a student organization at Occidental College. We run workshops that build technical and professional skills, host networking nights with alumni, and celebrate what our members achieve.</p>
+  <p>[Replace with your mission statement.]</p>
+  <a class="pill" href="#history">Learn more about BMF</a>
+</div></div></section>
+
+<div class="band"><h2>Pillars of BMF</h2></div>
+<section id="pillars" class="alt"><div class="wrap grid" id="pillarList"></div></section>
+
+<div class="band"><h2>Executive Board</h2></div>
+<section id="eboard"><div class="wrap grid" id="boardList"></div></section>
+
+<div class="band"><h2>Upcoming Events</h2></div>
+<section id="events" class="alt"><div class="wrap">
+  <div class="filters" role="group" aria-label="Filter events">
+    <button aria-pressed="true" data-k="All">All</button><button aria-pressed="false" data-k="Workshop">Workshops</button><button aria-pressed="false" data-k="Networking">Networking</button><button aria-pressed="false" data-k="Speaker">Speakers</button>
+  </div>
+  <div class="events" id="eventList"></div>
+</div></section>
+
+<div class="band"><h2>Alumni Network</h2></div>
+<section id="alumni"><div class="wrap">
+  <p style="text-align:center;max-width:56ch;margin:0 auto 26px">Graduates who answer questions about careers, interviews, and what the work is really like.</p>
+  <div class="grid" id="alumniList"></div>
+  <p style="text-align:center;margin-top:26px"><a class="pill" href="mailto:bmf@example.edu?subject=Alumni%20network">Join as an alum</a></p>
+</div></section>
+
+<div class="band"><h2>Member Highlights</h2></div>
+<section id="wins" class="alt"><div class="wrap grid" id="winList"></div></section>
+
+<div class="band"><h2>Our History</h2></div>
+<section id="history"><div class="wrap"><div class="panel">
+  <span class="tab">Our history</span>
+  <p>[Add the story of how BMF started at Occidental, key milestones, and past leaders.]</p>
+</div></div></section>
+
+<div class="news" id="newsletter"><div class="wrap">
+  <div><h2>Get the newsletter</h2><p>Event dates, member highlights, and one useful career tip each month.</p></div>
+  <form id="nl" novalidate>
+    <label for="email" style="position:absolute;left:-9999px">Email address</label>
+    <input id="email" type="email" placeholder="you@oxy.edu" autocomplete="email" required>
+    <button class="pill" type="submit">Subscribe</button>
+    <div class="msg" id="nlMsg" role="status"></div>
+  </form>
+</div></div>
+</main>
+<footer><div class="wrap"><span>Occidental's Black Men's Forum</span><span>bmf@example.edu</span></div></footer>
+
+<script>
+// ---- Edit your content here ----
+const PILLARS=[
+ ["Brotherhood","Looking out for each other, in school and after it."],
+ ["Innovation","Trying new ideas and building new skills."],
+ ["Sustainability","Leaving the club stronger for the next class."],
+ ["Collaboration","Doing more together than any of us could alone."],
+ ["Community","Showing up for Oxy and for Los Angeles."],
+ ["Empowerment","Giving members the tools and confidence to lead."]];
+const BOARD=[
+ ["Name Here '27","Co-President"],["Name Here '27","Co-President"],["Name Here '28","Chief Financial Officer"],
+ ["Name Here '28","Chief Marketing Officer"],["Name Here '28","Secretary"],["Name Here '29","Chief Philanthropy Officer"]];
+const EVENTS=[
+ {m:"Oct",d:22,title:"Resume Lab",kind:"Workshop",where:"Room 204",time:"4:00 PM",note:"Bring a laptop and a draft."},
+ {m:"Nov",d:5,title:"Intro to SQL for Everyone",kind:"Workshop",where:"Computer Lab",time:"3:30 PM",note:"No experience needed."},
+ {m:"Nov",d:12,title:"Alumni Mixer",kind:"Networking",where:"Student Center",time:"6:00 PM",note:"Five alumni, one evening."},
+ {m:"Dec",d:3,title:"Careers in Product: Guest Talk",kind:"Speaker",where:"Auditorium",time:"5:00 PM",note:"Includes Q&A."}];
+const ALUMNI=[
+ {n:"Alex Rivera",r:"Software Engineer, Acme Corp",c:"Class of 2021",t:"Ask me about first-job interviews."},
+ {n:"Priya Shah",r:"Data Analyst, City Health Dept.",c:"Class of 2019",t:"Ask me about public-sector careers."},
+ {n:"Jordan Lee",r:"Product Designer, Studio North",c:"Class of 2022",t:"Ask me about building a portfolio."}];
+const WINS=[
+ {h:"Maya T. placed 2nd at the state hackathon",p:"Her team built a bus-route planner in 24 hours."},
+ {h:"Daniel K. landed a summer internship",p:"He credits the mock-interview workshop."},
+ {h:"Case challenge winners",p:"Our team beat 12 others, judged by alumni and a local employer."}];
+// ---- Rendering ----
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ini=n=>n.split(" ").filter(w=>/^[A-Z]/.test(w)).slice(0,2).map(w=>w[0]).join("");
+$("#pillarList").innerHTML=PILLARS.map(p=>`<div class="card"><span class="tab">${esc(p[0])}</span><p>${esc(p[1])}</p></div>`).join("");
+$("#boardList").innerHTML=BOARD.map(b=>`<div class="card member"><div class="av" title="Replace with photo">${esc(ini(b[0]))}</div><div><h3>${esc(b[0])}</h3><div class="role">${esc(b[1])}</div><p style="margin-top:6px">Short bio goes here.</p></div></div>`).join("");
+function renderEvents(k){
+  $("#eventList").innerHTML=EVENTS.filter(e=>k==="All"||e.kind===k).map(e=>
+   `<article class="event"><div class="date"><small>${esc(e.m)}</small>${esc(e.d)}</div><div><h3>${esc(e.title)}</h3><p>${esc(e.time)}, ${esc(e.where)}. ${esc(e.note)}</p></div><span class="kind">${esc(e.kind)}</span></article>`).join("")||"<p style='text-align:center'>No events in this category yet. Check back soon.</p>";
+}
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderEvents(b.dataset.k);});
+renderEvents("All");
+$("#alumniList").innerHTML=ALUMNI.map(a=>`<div class="card member"><div class="av">${esc(ini(a.n))}</div><div><h3>${esc(a.n)}</h3><div class="role">${esc(a.c)}</div><p style="margin:4px 0">${esc(a.r)}. ${esc(a.t)}</p><a href="mailto:bmf@example.edu?subject=Intro%20to%20${encodeURIComponent(a.n)}">Request an intro</a></div></div>`).join("");
+$("#winList").innerHTML=WINS.map(w=>`<div class="card win"><h3>${esc(w.h)}</h3><p>${esc(w.p)}</p></div>`).join("");
+$("#nl").addEventListener("submit",e=>{
+  e.preventDefault();const v=$("#email").value.trim(),m=$("#nlMsg");
+  if(!/^\S+@\S+\.\S+$/.test(v)){m.textContent="Enter a valid email address, like you@oxy.edu.";return;}
+  // TODO: connect to your email tool (Mailchimp, Google Forms, etc.). This only shows a confirmation.
+  m.textContent="Thanks! You're on the list.";$("#email").value="";});
+</script>
+</body>
+</html>
